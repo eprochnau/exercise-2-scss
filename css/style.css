@@ -1,0 +1,108 @@
+/* This file imports your scss partials to be complied into one style sheet. That style sheet can then be attached to your html. */
+/* Variables are placeholders for sharing information that you want to reuse throughout your stylesheet. */
+/* You can store things like colours, font-stacks or any css value you can think of. */
+/* Variables are declared using a '$' */
+/* Where the meat of your css goes, broke up into modular parts, ie, type, layout, buttons, etc. */
+/* line 1, /Users/EmilyProchnau/Desktop/Graphic Design/Web Development/Week 2 : Jan 12-16/exercise-2-scss/scss/components/main */
+body {
+  background-color: url("http://i.huffpost.com/gen/1279332/thumbs/o-LULULEMON-SIZES-facebook.jpg");
+  font-family: Arial, Helvetica, sans-serif; }
+
+/*CSS FOR CUSTOM FONT*/
+@font-face {
+  font-family: 'custom-font';
+  src: url('../fonts/custom-font.eot');
+  src: url('../fonts/custom-font.eot') format('embedded-opentype'),
+       url('../fonts/custom-font.woff') format('woff'),
+       url('../fonts/custom-font.ttf') format('truetype'),
+       url('../fonts/custom-font.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?5035316#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "custom-font";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-cog-alt:before { content: '\e800'; } /* '' */
+.icon-basket:before { content: '\e801'; } /* '' */
+.icon-chat:before { content: '\e802'; } /* '' */
+.icon-favs:before { content: '\e803'; } /* '' */
+
+/*CSS FOR BUTTONS*/
+h1 {
+	color: $primary;
+}
+
+body {
+	font-family: $arial;
+	color: $primary;
+	background: url("http://i.huffpost.com/gen/1279332/thumbs/o-LULULEMON-SIZES-facebook.jpg");
+}
+
+button {
+	padding: 0.8em 0em;
+	width:350px;
+	background: $primary;
+	border-radius:15px;
+	border:0;
+	color: $primary;
+	font-size:1.2em;
+	font-family: $arial;
+	font-weight:bold;
+	cursor:pointer;
+	margin:1em 2em;
+	text-transform:uppercase;
+}    
+
+.letters{
+	white-space:nowrap;
+	overflow:hidden;
+	transition: letter-spacing 3s;
+	-webkit-transition: letter-spacing 3s; /* Safari */
+	transition-delay: 0.5s;
+	-webkit-transition-delay: 0.5s;
+}
+
+.letters:hover{
+	letter-spacing:320px;
+	transition-delay: 0s;
+	-webkit-transition-delay: 0s;  
+}
